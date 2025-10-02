@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        div{
+            border: green dashed;
+        }
+    </style>
+</head>
+<body>
+    <!-- EMMET - HTML을 단축키처럼 정규식 패턴으로 작성하는 기능  -->
+    <div id="header">
+        <a href="06_layout.html"><img src="./data/jjanggu.png" width="50px"></a>
+        <a href="05_html_layout.html">다른 페이지로 가기</a> 
+        <a href="#food1">1차메뉴</a> 
+        <a href="#food2">2차메뉴</a> 
+          <form action="http://google.com/search?" target="_blank">
+            <input type="hidden" name="as_sitesearch" value="facebook.com"> 
+            <input type="search" name="q"> 
+            <input type="submit" value="검색">
+        </form>
+    </div>
+    <div id="main"> 
+        <div id="food1">
+            쌀국수 1차
+            <img src="data/쌀국수.png" width="500px">
+
+        </div>
+        <div id="food2">
+            피자 2차
+            <img src="data/피자.png" width="500px">
+
+        </div>
+        <div id="food3">
+            민트초코 3차
+            <img src="data/민트초고.png" width="500px">
+
+        </div>
+
+    </div>
+    <div id="footer">회사 소개 / 약관 / 사이트맵 </div>
+</body>
+</html>

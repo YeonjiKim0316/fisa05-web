@@ -1,0 +1,10 @@
+/* body {
+    background-color: beige;
+} */
+/* css는 
+        1. head에 <style> </style>
+        2. 별도의 파일로 만들어서 import 
+        3. 특정 태그에 style=""로 직접 작성하는 방법이 있습니다. */
+h1 {
+    background-color: yellow;
+}
