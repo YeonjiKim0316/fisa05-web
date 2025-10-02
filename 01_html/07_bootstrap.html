@@ -3,30 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        .line-need {
+            border: green dashed;
+        }
+    </style>
 </head>
 <body>
-
+    내용
 
     <!-- 1. layout : 부트스트랩은 12개의 컬럼으로 나눈 한 행 -->
-
+    <div class="container text-center line-need">
+    <div class="row">
+        <div class="col-2 line-need">
+        Column
+        </div>
+        <div class="col line-need">
+        Column
+        </div>
+        <div class="col line-need">
+        Column
+        </div>
+    </div>
+    <div class="row">
+        <div class="col line-need">
+        Column
+        </div>
+        <div class="col line-need text-success bg-danger">
+        Column
+        </div>
+    </div>
+    </div>
 
     <!-- 2. 제목은 h1~6 을 쓰면 적용되고, class로는 display-1 ~ display-6 으로 호환 가능합니다. -->
-
+    <h1>제목</h1>
+    <h2>제목</h2>
+    <h3>제목</h3>
+    <h4>제목</h4>
+    <h5>제목</h5>
+    <h6>제목</h6> 일반 글자
+    <h7>제목</h7>일반 글자
     
-    <!-- 3. 이미지 태그 -->
+    <!-- display-크기 라는 class 사용하면 조금더 큰 글자를 취할 수 있습니다. -->
+    <p class="display-1">제목</p>
 
+    <!-- 3. 이미지 태그 -->
+    <img src="./data/jjanggu.png" class="img-fluid img-thumbnail float-start">
+    <img src="./data/jjanggu.png" class="img-fluid img-thumbnail float-end">
     
     <!-- 4. table -->
-
+    <table class="table text-center">
+    <thead class="table-primary ">
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        </tr>
+        <tr>
+        <th scope="row">2</th>
+        <td class="table-danger">Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        </tr>
+        <tr>
+        <th scope="row">3</th>
+        <td class="table-dark text-danger">John</td>
+        <td>Doe</td>
+        <td>@social</td>
+        </tr>
+    </tbody>
+    </table>
 
     <!-- 5. 색깔 -->
+<!-- On tables -->
+<table class="table-primary">...</table>
+<table class="table-secondary">...</table>
+<table class="table-success">...</table>
+<table class="table-danger">...</table>
+<table class="table-warning">...</table>
+<table class="table-info">...</table>
+<table class="table-light">...</table>
+<table class="table-dark">...</table>
 
+<!-- On rows -->
+<tr class="table-primary">...</tr>
+<tr class="table-secondary">...</tr>
+<tr class="table-success">...</tr>
+<tr class="table-danger">...</tr>
+<tr class="table-warning">...</tr>
+<tr class="table-info">...</tr>
+<tr class="table-light">...</tr>
+<tr class="table-dark">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="table-primary">...</td>
+  <td class="table-secondary">...</td>
+  <td class="table-success">...</td>
+  <td class="table-danger">...</td>
+  <td class="table-warning">...</td>
+  <td class="table-info">...</td>
+  <td class="table-light">...</td>
+  <td class="table-dark">...</td>
+</tr>
+
+      <p class="text-primary">.text-primary</p>
+      <p class="text-primary-emphasis">.text-primary-emphasis</p>
+      <p class="text-secondary">.text-secondary</p>
+      <p class="text-secondary-emphasis">.text-secondary-emphasis</p>
+      <p class="text-success">.text-success</p>
+      <p class="text-success-emphasis">.text-success-emphasis</p>
+      <p class="text-danger">.text-danger</p>
+      <p class="text-danger-emphasis">.text-danger-emphasis</p>
+      <p class="text-warning bg-dark">.text-warning</p>
+      <p class="text-warning-emphasis">.text-warning-emphasis</p>
+      <p class="text-info bg-dark">.text-info</p>
+      <p class="text-info-emphasis">.text-info-emphasis</p>
+      <p class="text-light bg-dark">.text-light</p>
+      <p class="text-light-emphasis">.text-light-emphasis</p>
+      <p class="text-dark bg-white">.text-dark</p>
+      <p class="text-dark-emphasis">.text-dark-emphasis</p>
+      
+      <p class="text-body">.text-body</p>
+      <p class="text-body-emphasis">.text-body-emphasis</p>
+      <p class="text-body-secondary">.text-body-secondary</p>
+      <p class="text-body-tertiary">.text-body-tertiary</p>
+      
+      <p class="text-black bg-white">.text-black</p>
+      <p class="text-white bg-dark">.text-white</p>
+      <p class="text-black bg-white">.text-black-25</p>
+      <p class="text-white-50 bg-dark">.text-white-50</p>
+      <hr>
 
     <!-- 6. 간격 
      p: padding 자기 안에서의 간격 / m: margin 바깥 요소와의 간격 / 
      b bottom / s (start- 정렬 기준 left) / e (end- 정렬 기준 right) / t top-->
-
+    <p class="text-black bg-white line-need mt-5 pb-5 ps-5">.text-black-25</p>
+    <p class="text-white-50 bg-dark line-need">.text-white-50</p>
+  
 
     <!-- 7. 아코디언 - 움직임을 가진 컴포넌트 -->
   
