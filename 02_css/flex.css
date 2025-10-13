@@ -4,12 +4,32 @@ body {
 
 /* 기준이 되는 부모 컨테이너에서 flex를 지정해놓고 */
 .container {
+    height: 100vh;
     display: flex;
-    /* */ 
+    /* 중심축 정하기 */
+    /* flex-direction: column; */
+    /* 다음줄로 넘기기 */ 
+    flex-wrap: no-wrap; 
+    /* 중심축 기준으로 어떻게 아이템을 배치할지 */
+    justify-content: space-evenly;
+    /* 중심축의 수직으로 어떻게 아이템을 배치할지 */
+    align-items: flex-start;
+
+
     border: black solid 3px;
 }
 
 /* 일괄적으로 특정 위치의 값만 선택할 때 odd, even */
 .item{
     border: black dashed;
+}
+
+/* 특정 자식 컨테이너의 위치를 order 라는 옵션으로 지정할 수 있게 됩니다. */
+#item4 {
+    order: -1;
+    flex-basis: 30%;
+}
+
+#item1 {
+    order: -2;
 }
