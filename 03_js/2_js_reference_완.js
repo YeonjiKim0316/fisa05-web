@@ -341,4 +341,67 @@ class Person2 {
     this.age = age
   }
 }
+
 김연지 = new Person2('연지', 30)
+
+// static: 클래스를 통해 접근하는 클래스 변수, 클래스 메서드
+// 인스턴스를 통해 접근하는 v 인스턴스 변수(this로 전달), v 인스턴스 메서드
+// 은닉성 구현: #을 붙인 private 변수를 사용하여 외부에서 접근하지 못하도록 숨길 수 있습니다.
+class Person2 {
+
+  // private 변수는 클래스의 맨 앞에 선언을 해줍니다. 
+  // 클래스 안에서만 사용이 가능한 변수 
+  #balance; 
+  
+  // 클래스 변수를 선언 
+  static nation = '대한민국'
+  
+  // 클래스 메서드를 선언
+  static human() {
+    console.log('인간입니다')
+  }
+  
+  // constructor() : __init__ 과 같은 생성자 메서드 - 인스턴스 변수를 선언할 수 있게 됩니다
+  constructor(name, age, balance) {
+    this.name = name
+    this.age = age
+    this.#balance = balance
+  }
+  
+  // 인스턴스 메서드 - 함수를 작성만 해주시면 됩니다.
+  play() {
+    return `${this.name}이/가 노는 중입니다.`
+  }
+  
+  // get payment 라는 인스턴스 메서드를 인스턴스 변수처럼 사용 가능  = #balance를 확인만 가능한 메서드 - getter 변수 
+  get payment() {
+    return this.#balance
+  }
+  
+  // set payment 라는 인스턴스 메서드 = #balance를 수정만 가능한 메서드 
+  set payment(new_balance) {
+    if (Number(new_balance) >= 0) {
+      this.#balance = new_balance
+    }
+  }
+}
+
+김연지 = new Person2('연지', 30, 3000000)
+김연지.payment
+김연지.payment = '십만원' 
+김연지.payment
+김연지.payment = 100000 
+김연지.payment
+
+// console.log(김연지.balance)
+// console.log(김연지.account_num)
+// console.log(김연지.play())
+// console.log(김연지.nation) // 클래스변수는 클래스를 통해서만 접근 가능
+// console.log(Person2.nation)
+// // 김연지.human() // 클래스함수는 클래스를 통해서만 접근 가능 
+// Person2.human()
+
+// 신짱구 = new Person2('짱구', 5)
+// console.log(신짱구.balance)
+// console.log(신짱구.account_num)
+// console.log(신짱구.play())
