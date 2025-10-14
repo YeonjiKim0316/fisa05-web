@@ -265,3 +265,105 @@ switch (menu) {
   }
 
 
+// 자바스크립트의 변수 
+// var - 선언, 할당을 새롭게 할 수 있는 
+var a = 1;
+a = 3;
+var a = 2;
+a
+
+// let - 선언은 한번만, 재할당은 여러번 가능 
+let b = 1;
+b = 3;
+b
+
+// const - 선언도 할당도 기본자료형에 대해 한번만 가능 
+const c = 1;
+// c = 3;
+
+// 기본자료형: number(숫자), string(문자열), boolean(true, false), null(개발자가 값 겂을 채워 넣을 때), undefined(자바스크립트 엔진이 아직 할당되지 않은 공간, return할 것이 없음)  
+var num = +1.1; 
+typeof(num)
+var str = `가나다 '${num+1}'`
+str
+typeof(str)
+var bool1 = false
+typeof bool1
+
+var null1 = null // 개발자가 채워넣은 값 없음
+typeof(null1) // object로 간주된다 버그를 그대로 남겨놓았기 때문에
+Boolean(null1) // false 이면서 type이 object 
+
+var undef1 = undefined // 아직 할당되지 않음 / 리턴할 것이 없음을 의미하는 자바스크립트 엔진의 리턴값 
+typeof(undef1)
+Boolean(undef1) // false이면서 type은 undefined 
+
+// 일단은 문자열로 값이 받아지는 경우가 많습니다.
+// 문자열로 받은 값을 형변환을 할 때 
+str
+Number(str) // NaN -> 숫자로 형변환이 불가함 
+String(num)
+Boolean({}) // 0, false, null, undefiend, NaN 등은 false를 리턴하지만 빈 리스트, 빈 dict는 true를 리턴하는 특징이 있습니다.
+
+// 증감연산자를 전위식 / 후위식으로 사용할 수 있다. 
+var num = 1.1
+num += 1
+num++ // 현재는 2.1을 쓰고 num이라는 변수에 +1을 더해서 되돌려줌
+++num // 현재는 +1을 해서 쓰고 num이라는 변수에 마지막 값을 되돌려줌  num+++ 은 안 됨 
+
+// == 값의 일치만 비교하는 항등연산자 / === 값과 자료형의 일치를 모두 비교하는 완전항등연산자 
+1=='1' // true
+1==='1' // false
+
+// 조건문: if~else if~else 문과 switch~case 문이 있습니다.
+/*
+if (판별할 명제) { 
+  참일 때 실행문 
+} else if (두번째 판별할 명제) { 
+  참2일때 실행문
+} else { 
+  거짓일 때 실행문 
+}
+
+switch (판별할 명제) {
+  case 첫번째 참의 경우:
+    참의 경우 실행문
+    break
+  case 두번째 참의 경우:
+    참의 경우 실행문
+    break
+  default:
+    거짓일 경우의 실행문    
+}
+*/
+
+// var age 라는 변수에 나이를 입력받고 나이가 18보다 적으면 미성년자입니다. 18살 이상이면 성인입니다를 리턴하는 if / switch문을 작성 
+var age =20;
+age 
+if (age >= 18) {
+  console.log('성인입니다')
+} else if ( 0 < age && age < 18) {
+  console.log('미성년자입니다')
+} else {
+  console.log('잘못 입력하셨습니다.')
+}
+console.log('--------------------')
+
+// switch~case 문은 단일값을 비교하기 위해 만들어진 조건문입니다. &&, || 을 사용한 다중조건문을 작성할 수 없습니다. 단락평가가 이루어지기 때문 
+age = 5;
+switch (age) {
+  case (1 || 2 || 3 || 4 || 5): // 1일때만 동작
+    console.log('미성년자입니다')
+    break
+  default:
+    console.log('성인입니다')
+}
+
+age = 18;
+switch (true) {
+  case (age < 18):
+    console.log('미성년자입니다')
+    break
+  default:
+    console.log('성인입니다')
+}
