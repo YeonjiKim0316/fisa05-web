@@ -36,7 +36,12 @@
   <script>
     alert("🔴 [4] body 끝 스크립트 실행됨");
     console.log("🔴 [4] body 끝 스크립트 실행됨");
-
+    const el = document.getElementById("target");
+        if (el) {
+        el.textContent = "✅ 변경 성공!";
+        } else {
+        console.error("❌ #target 요소를 찾지 못했어요!");
+        }
   </script>
 
   <!-- DOMContentLoaded 이벤트 확인 -->
@@ -47,7 +52,7 @@
         console.log("✅ [5] DOMContentLoaded 발생");
         const el = document.getElementById("target");
         if (el) {
-        el.textContent = "✅ 변경 성공!";
+        el.textContent = "✅ 변경 성공2!";
         } else {
         console.error("❌ #target 요소를 찾지 못했어요!");
         }
@@ -55,6 +60,12 @@
 
     window.addEventListener("load", () => {
     console.log("✅ load: 모든 리소스까지 완전히 로드됨!");
+            const el = document.getElementById("target");
+        if (el) {
+        el.textContent = "✅ 변경 성공3!";
+        } else {
+        console.error("❌ #target 요소를 찾지 못했어요!");
+        }
 
 
   });

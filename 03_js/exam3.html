@@ -5,17 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
     <div class='title' id="one" style="border: 5px solid yellow;" onclick="myfun()">짱구는</div>
   
-    <div class='title' id="two" style="border: 5px solid pink;" onclick="myfun2()">못말려</div>
+    <div class='title' id="two" style="border: 5px solid pink;">못말려</div>
   
   <div id="three">
         <ul id="four">
-            <li>훈이</li>
+            <li id="five">훈이</li>
             <li>철수</li>
         </ul>
     </div>
+
+
+    <script>
+        // document.getElementById(아이디명) 
+        // document.getElementsByClassName(클래스명)
+        // document.getElementsByTagName(태그명)
+        // document.querySelector(#아이디명, .클래스명, 태그명)
+        // document.querySelectorAll('div') 배열로 전체 객체들을 가져옵니다.
+        // document.querySelector('div').innerHTML = '훈이는' // 객체가 여러개일 경우에는 그중에 첫번째 값만을 선택 
+
+        // function myfun() {
+        //     document.getElementById('one').innerHTML = '훈이는'
+        //     document.getElementById('two').innerHTML = '잘말려'
+        // }
+
+        // .title 로 선택자를 찾아서 안에있는 내용을 '변경됨'으로 바뀌도록 
+        var myfun = function () {
+            var arrays = document.querySelectorAll('.title')
+            arrays.forEach((array) => {array.innerHTML = '변경됨'})
+        }
+
+        // myfun2 라는 함수를 만드셔서 클릭하면 잘말려 부분이 jjanggu.png를 출력하도록 함수를 작성해 주세요.
+        // if ~ else 문을 이용해서 img가 떠있는 상태이면 -> 못말려로 문자열을 변경, 못말려 -> 이미지 
+        var myfun2 = () => {
+            if (document.getElementById('two').innerHTML === '못말려') {
+             document.getElementById('two').innerHTML = '<img src="jjanggu.png">'
+            } else {
+                 document.getElementById('two').innerHTML = '못말려'
+            } 
+        }
+
+        // 이벤트를 추적할 위치.addEventLister(이벤트, 실행할함수)
+        var five = document.getElementById('five')
+        five.addEventListener('click', myfun2)
+    
+        // id가 two인 위치에 EventListener로 mouseover를 걸고, myfun2가 실행되도록 
+        document.querySelector('#two').addEventListener('mouseover',  () => {
+            if (document.getElementById('two').innerHTML === '못말려') {
+             document.getElementById('two').innerHTML = '<img src="jjanggu.png">'
+            } else {
+                 document.getElementById('two').innerHTML = '못말려'
+            } })
+    </script>
 </body>
 </html>
